@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrays</title>
+    <script src="app.js" async></script>
+    <style>
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      button {
+        border: none;
+        padding: 0.5rem 1rem;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .container {
+        width: 60%;
+      }
+      .add-task {
+        margin-bottom: 2rem;
+      }
+      .add-task input {
+        border: none;
+        border-bottom: 1px solid #3e3e3e;
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 90%;
+        outline: none;
+        padding: 0.2rem 0 0.2rem 0.2rem;
+      }
+
+      .task-list ul {
+        border: 1px solid rgb(179, 179, 179);
+        margin-bottom: 0.5rem;
+        padding: 1rem 0.3rem 1rem 0.3rem;
+      }
+
+      .task-list ul li {
+        padding: 0.3rem;
+        border-bottom: 1px solid salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM selectors for single elements</h1>
+    <div class="container">
+      <div class="add-task">
+        <input type="text" />
+        <button type="submit">ADD</button>
+      </div>
+      <div class="task-list" id="task-list-a">
+        <ul>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+          <li>List Item</li>
+        </ul>
+        <button type="submit">CLEAR ALL</button>
+      </div>
+      <div class="container container-test">
+        this is container 2 !
+        <div class="test">i am test div</div>
+        <div class="test">i am test div</div>
+        <div class="test">i am test div</div>
+      </div>
+    </div>
+  </body>
+</html>
