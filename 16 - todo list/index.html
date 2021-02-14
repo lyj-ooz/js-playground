@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrays</title>
+    <script src="app.js" async></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      button {
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        margin-left: 0.5rem;
+      }
+      button:focus {
+        outline: none;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      h1 {
+        margin: 0;
+      }
+
+      .container {
+        width: 50%;
+        margin: 4rem auto;
+        background-color: #ffffcb;
+        padding-bottom: 0.5rem;
+      }
+
+      .title {
+        background: #161e6d;
+        margin-bottom: 2.5rem;
+      }
+      .title h1 {
+        text-align: center;
+        padding: 0.7rem 0;
+        color: #f0f0f0;
+      }
+      .add-task {
+        margin-bottom: 3.5rem;
+      }
+      .add-task input {
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 1px solid #b3b3b3;
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        outline: none;
+        padding: 0.2rem 0 0.2rem 0.2rem;
+        background-color: #ffffcb;
+      }
+
+      .task-list ul {
+        margin-bottom: 0.5rem;
+      }
+      .task-list ul li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #fa8072;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .task-list .delete {
+        font-size: 0.5rem;
+        color: #b3b3b3;
+        cursor: pointer;
+      }
+      .task-list .delete:hover {
+        color: #cf2d2d;
+      }
+
+      @media (max-width: 785px) {
+        .container {
+          width: 75%;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>TO-DO List 😉</h1>
+      </div>
+
+      <div class="add-task">
+        <form>
+          <input type="text" placeholder="enter your task" />
+          <button type="submit">ADD</button>
+        </form>
+      </div>
+
+      <div class="task-list">
+        <ul>
+          <!-- <li>
+            <span>list item</span>
+            <span class="delete">delete</span>
+          </li>
+          <li>
+            <span>list item</span>
+            <span class="delete">delete</span>
+          </li> -->
+        </ul>
+        <button type="submit">CLEAR ALL</button>
+      </div>
+      <!--end of task-list -->
+    </div>
+  </body>
+</html>
