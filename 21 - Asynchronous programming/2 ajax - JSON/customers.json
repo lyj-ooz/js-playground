@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "apple",
+    "company": "Google"
+  },
+  {
+    "id": 2,
+    "name": "banana",
+    "company": "MS"
+  },
+  {
+    "id": 33,
+    "name": "melon",
+    "company": "Spotify"
+  }
+]
