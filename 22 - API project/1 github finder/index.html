@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>github finder</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script src="github.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js" async></script>
   </head>
   <body>
     <header>
@@ -14,8 +16,9 @@
         <h1>GitHub Finder</h1>
       </div>
     </header>
+
     <main>
-      <div class="container">
+      <div class="container search">
         <h2>Search Github Users</h2>
         <p>Enter a username to fetch a users profile info and repos</p>
         <form>
@@ -23,8 +26,68 @@
           <button type="submit">Search</button>
         </form>
       </div>
-      <div class="container result">result~</div>
+
+      <div class="container profile">
+        <div class="user-pic">
+          <img
+            src="./SE-a72e1ba6-4c3c-4732-b11f-42b4a8b144a5.jpg"
+            alt="github user profile picture"
+          />
+          <a href="#">View Profile</a>
+        </div>
+        <!-- user-pic -->
+        <div class="user-info">
+          <div class="user-info-numbers">
+            <div class="repos blue">Public Repos: <span></span></div>
+            <div class="gists gray">Public Gists: <span></span></div>
+            <div class="followers green">Followers: <span></span></div>
+            <div class="following turq">Following: <span></span></div>
+          </div>
+
+          <div class="user-info-strings">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Company: <span></span></td>
+                </tr>
+                <tr>
+                  <td>Wesite/blog: <span></span></td>
+                </tr>
+                <tr>
+                  <td>Location: <span></span></td>
+                </tr>
+                <tr>
+                  <td>Member Since: <span></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- user-info -->
+      </div>
+      <!-- container profile -->
+
+      <div class="container latest-repo">
+        <h3>Latest Repos</h3>
+        <div class="repo-box">
+          <div class="repo-title">kukuku</div>
+          <div class="repo-nums">
+            <div class="stars blue">Stars: <span></span></div>
+            <div class="watchers green">Watchers: <span></span></div>
+            <div class="forks yellow">Forks: <span></span></div>
+          </div>
+        </div>
+        <div class="repo-box">
+          <div class="repo-title">kukuku</div>
+          <div class="repo-nums">
+            <div class="stars blue">Stars: <span></span></div>
+            <div class="watchers green">Watchers: <span></span></div>
+            <div class="forks yellow">Forks: <span></span></div>
+          </div>
+        </div>
+      </div>
     </main>
+
     <footer>
       <div class="container">GitHub Finder</div>
     </footer>

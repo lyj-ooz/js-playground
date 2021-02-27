@@ -53,7 +53,7 @@ button {
 main .container {
   border: 1px solid #c4c4c4;
   border-radius: 2px;
-  padding: 1.2rem 0.8rem 0.8rem 0.8rem;
+  padding: 1rem 0.8rem 0.8rem 0.8rem;
 }
 
 main .container h2,
@@ -62,10 +62,121 @@ main .container p {
 }
 
 .container {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
-.result {
-  margin-top: 2rem;
+.search {
+  margin-bottom: 2rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  /* height: 200px; */
+}
+
+.user-pic {
+  flex-basis: 30%;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.user-info {
+  flex-basis: 70%;
+}
+
+.user-pic img {
+  /* width: 100px; */
+  width: 100%;
+  max-width: 170px;
+  /* display: block; */
+}
+
+.user-pic a {
+  max-width: 170px;
+  border-radius: 13px;
+  background-color: #77a9f3;
+  color: #f3f3f3;
+  text-decoration: none;
+  padding: 0.3rem 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.user-info-numbers {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.user-info-numbers > div {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.2rem;
+}
+
+.blue {
+  border: 1px solid #3682f5;
+  border-radius: 3px;
+}
+.gray {
+  border: 1px solid #a5a5a5;
+  border-radius: 3px;
+}
+.green {
+  border: 1px solid #3bdd26;
+  border-radius: 3px;
+}
+.turq {
+  border: 1px solid #11b3aa;
+  border-radius: 3px;
+}
+.yellow {
+  border: 1px solid #ecc901;
+  border-radius: 3px;
+}
+
+table tbody tr td {
+  border: 1px solid #c4c4c4;
+  padding: 0.5rem 0.8rem;
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+main .latest-repo {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+main .latest-repo h3 {
+  margin-bottom: 0.5rem;
+}
+
+main .latest-repo .repo-box {
+  border: 1px solid #c4c4c4;
+  padding: 0.8rem;
+  display: flex;
+  margin-bottom: 0.3rem;
+  /* width: 100%; */
+}
+
+main .latest-repo .repo-box .repo-title {
+  width: 60%;
+  align-self: center;
+}
+main .latest-repo .repo-box .repo-nums {
+  width: 40%;
+  display: flex;
+}
+main .latest-repo .repo-box .repo-nums > div {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 933px) {
+  .container {
+    /* width: 90%; */
+  }
 }
