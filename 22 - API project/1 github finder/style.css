@@ -175,6 +175,12 @@ main .latest-repo .repo-box .repo-nums > div {
   font-size: 0.8rem;
 }
 
+.warning {
+  background-color: #ff5744c7;
+  padding: 0.3rem 0 0.2rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 933px) {
   .container {
     /* width: 90%; */
