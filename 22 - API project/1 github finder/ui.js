@@ -44,10 +44,15 @@ class UI {
     `;
   }
 
-  cleanInput() {
+  clearInput() {
     document.querySelector(".container form input").value = "";
   }
   showAlert() {
-    //
+    //이 부분 작성하고 커밋하기
+  }
+
+  clearProfileRepos() {
+    this.profile.style.display = "none";
+    document.querySelector(".latest-repo").innerHTML = "";
   }
 }
