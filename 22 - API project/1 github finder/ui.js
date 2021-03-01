@@ -47,8 +47,27 @@ class UI {
   clearInput() {
     document.querySelector(".container form input").value = "";
   }
+
   showAlert() {
-    //이 부분 작성하고 커밋하기
+    this.clearAlert();
+
+    const div = document.createElement("div");
+    div.className = "warning";
+    div.appendChild(document.createTextNode("User not found"));
+    const h = document.querySelector(".search > h2");
+    document.querySelector(".search").insertBefore(div, h);
+
+    setTimeout(() => {
+      document.querySelector(".warning").remove();
+    }, 2000);
+  }
+
+  clearAlert() {
+    // warning div가 중복으로 뜨지 않도록 이미 있으면 또 생기는건 지움.
+    const alert = document.querySelector(".warning");
+    if (alert) {
+      alert.remove();
+    }
   }
 
   clearProfileRepos() {
