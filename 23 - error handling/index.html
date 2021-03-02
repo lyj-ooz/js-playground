@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h2>try...catch</h2>
+    <ul>
+      <li>try 부분의 코드에서 에러가 나면 catch에서 처리</li>
+      <li>
+        에러가 발생한 해당 스크립트 전체가 멈추지 않고도 catch로 에러를 처리할
+        수 있어 좋다고 함.
+      </li>
+      <li>error.message를 출력하면 에러 메세지만 깔끔하게 나온다</li>
+      <li>
+        error.name으로 에러의 이름(?), 타입을 출력할 수 있음 예: ReferenceError
+      </li>
+      <li>
+        에러가 어떤 타입인지 확인하려면 error instanceof TypeError 이런 식으로..
+      </li>
+    </ul>
+
+    <h2>try...catch...finally</h2>
+    <ul>
+      <li>finally 부분의 코드는 무조건 실행됨</li>
+      <li>위쪽의 try나 catch에 상관없이 무조건 실행</li>
+    </ul>
+
+    <h2>에러 직접 만들기</h2>
+    <ul>
+      <li>
+        throw 를 사용해서 에러를 만들고, 그 에러가 만약 발생하면 catch 에서
+        error 파라미터로 받아서 원하는 것을 할 수 있음
+      </li>
+      <li>throw 'user has no name'</li>
+      <li>또는 throw new SyntaxError('user has no name')</li>
+    </ul>
+  </body>
+</html>
