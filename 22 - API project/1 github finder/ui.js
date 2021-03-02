@@ -1,10 +1,10 @@
 class UI {
   constructor() {
     this.profile = document.querySelector(".profile");
+    this.lastestRepos = document.querySelector(".latest-repo");
   }
 
   showProfile(user) {
-    //
     console.log(user);
     this.profile.innerHTML = `
       <div class="user-pic">
@@ -44,6 +44,30 @@ class UI {
     `;
   }
 
+  showRepos(repos) {
+    console.log(repos);
+
+    let str = "";
+
+    repos.forEach((repo) => {
+      str += `
+        <div class="repo-box">
+          <div class="repo-title">${repo.name}</div>
+          <div class="repo-nums">
+            <div class="stars blue">Stars: <span>${repo.stargazers_count}</span></div>
+            <div class="watchers green">Watchers: <span>${repo.watchers_count}</span></div>
+            <div class="forks yellow">Forks: <span>${repo.forks_count}</span></div>
+          </div>
+        </div>
+      `;
+    });
+
+    this.lastestRepos.innerHTML = `
+      <h3>Latest Repos</h3>
+      ${str}
+    `;
+  }
+
   clearInput() {
     document.querySelector(".container form input").value = "";
   }
@@ -58,7 +82,7 @@ class UI {
     document.querySelector(".search").insertBefore(div, h);
 
     setTimeout(() => {
-      document.querySelector(".warning").remove();
+      this.clearAlert();
     }, 2000);
   }
 

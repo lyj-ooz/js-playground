@@ -10,14 +10,15 @@ document.querySelector(".container form").addEventListener("submit", (e) => {
       .getUser(userText) //
       .then((data) => {
         if (data.profile.message === "Not Found") {
-          //
+          ui.showAlert();
         } else {
           ui.showProfile(data.profile);
-          ui.cleanInput();
+          ui.showRepos(data.repos);
+          ui.clearInput();
         }
       });
   } else {
-    //
+    ui.clearProfileRepos();
   }
 });
 

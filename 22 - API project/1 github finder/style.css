@@ -173,6 +173,7 @@ main .latest-repo .repo-box .repo-nums {
 main .latest-repo .repo-box .repo-nums > div {
   padding: 0.2rem 0.4rem;
   font-size: 0.8rem;
+  margin-right: 0.2rem;
 }
 
 .warning {
