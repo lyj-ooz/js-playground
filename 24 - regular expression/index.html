@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression</title>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h1>regular expressions</h1>
+    <ol>
+      <li>.source: 정규식 표현에서 // 안에 들어있는 것만 출력함</li>
+      <li>.exec(): 정규식표현과 매치되는게 있으면 배열로 리턴, 없으면 null</li>
+      <li>.test(): 매치되는게 있으면 true, 없으면 false</li>
+      <li>
+        flags... 정규표현식에 추가되는 조건?표현들은 // 뒤에 붙인다. ex)
+        i(case-insensitive), g(나오는 족족 찾음), ...
+      </li>
+      <li>
+        .match(): 검사할 문자열에 .match()를 사용하고 파라미터로 정규표현식을
+        전달한다. 매치되면 배열을 리턴, 없으면 null
+      </li>
+      <li>.search(): 매치되는 것의 인덱스를 반환. 없으면 -1</li>
+      <li>
+        .replace(): 첫번쨰 파라미터로 전달된 정규식 표현과 일치하는 것을 찾아서,
+        두번째 파라미터로 전달된 교체 문자와 바꾼다.
+      </li>
+    </ol>
+  </body>
+</html>
