@@ -5,10 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/b7ad602252.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+
     <script src="app.js" async></script>
     <script src="weather.js" async></script>
   </head>
   <body>
-    <div class="show-weather"></div>
+    <div id="wrapper">
+      <header class="search">
+        <input type="text" id="search-input" />
+        <i class="fas fa-search"></i>
+        <button type="submit">Search</button>
+      </header>
+      <!-- //header.search -->
+
+      <main class="show-weather">
+        <article>
+          <div class="city">Seoul</div>
+          <div class="current-weather">Clouds</div>
+          <div class="current-temperature">
+            <h1>12.99</h1>
+          </div>
+          <div class="high-low-temperature">
+            <span id="highest">14</span>
+            <span id="lowest">12</span>
+          </div>
+        </article>
+      </main>
+      <!-- //main -->
+    </div>
+    <!-- //div.wrapper -->
   </body>
 </html>
