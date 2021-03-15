@@ -1,0 +1,63 @@
+body {
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 80%;
+  height: 500px;
+  background-color: blanchedalmond;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+#wrapper .search {
+  /* width: 100%; */
+  position: relative;
+}
+#wrapper .search #search-input {
+  width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px 8px 8px 32px;
+  transition: 0.3s;
+}
+#wrapper .search #search-input:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 2px 0 rgb(67, 161, 255);
+}
+#wrapper .search #search-input:focus + i {
+  color: dodgerblue;
+}
+#wrapper .search i {
+  /* width: 100%; */
+  position: absolute;
+  left: 8px;
+  top: 18px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+#wrapper .search button[type="submit"] {
+}
+#wrapper .show-weather {
+}
+#wrapper .show-weather article {
+}
+
+#wrapper .show-weather article .city {
+}
+#wrapper .show-weather article .current-weather {
+}
+#wrapper .show-weather article .current-temperature {
+}
+#wrapper .show-weather article .high-low-temperature {
+}
+
+.high-low-temperature #highest {
+}
+.high-low-temperature #lowest {
+}
