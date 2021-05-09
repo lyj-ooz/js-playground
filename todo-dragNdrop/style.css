@@ -113,3 +113,7 @@ body {
   border: 1px solid slateblue;
   color: slateblue;
 }
+
+.dragging {
+  background-color: salmon;
+}
