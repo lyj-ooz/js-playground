@@ -1,29 +1,43 @@
+const container = document.querySelector(".container");
 const todoInput = document.querySelector(".input input");
 const todoCards = document.querySelector(".todo-cards");
 const finishedCards = document.querySelector(".finished-cards");
 const todoCardsSection = document.querySelector(".todo");
 const finishedCardsSection = document.querySelector(".finished");
+const cardsSections = document.querySelector(".todo, .finished");
 
-//todo-cards div에 마우스가 눌리면 div들을 싹 새로 불러온다음 drag 이벤트를 준다.
-todoCards.addEventListener("mousedown", () => {
-  const todos = document.querySelectorAll(".todo-cards div");
-  console.log(todos);
+//todo-cards, finished-cards div에 마우스가 눌리면 div들을 싹 새로 불러온다음 drag 이벤트를 준다.
+container.addEventListener("mousedown", () => {
+  const cardDivs = document.querySelectorAll(
+    ".todo-cards div, .finished-cards div"
+  );
 
-  todos.forEach((todo) => {
-    todo.addEventListener("dragstart", () => {
-      todo.classList.add("dragging");
+  cardDivs.forEach((cardDiv) => {
+    cardDiv.addEventListener("dragstart", () => {
+      cardDiv.classList.add("dragging");
     });
-    todo.addEventListener("dragend", () => {
-      todo.classList.remove("dragging");
+    cardDiv.addEventListener("dragend", () => {
+      cardDiv.classList.remove("dragging");
     });
   });
 });
 
 //finished div에 dragover 이벤트가 일어나면 finished-cards에 드래그로 끌고 온 div를 자식 요소로 추가한다.
-finishedCardsSection.addEventListener("dragover", (e) => {
+finishedCardsSection.addEventListener("dragover", (e) => e.preventDefault());
+finishedCardsSection.addEventListener("drop", (e) => {
   e.preventDefault();
   const dragging = document.querySelector(".dragging");
   finishedCards.appendChild(dragging);
+});
+
+//todo div에 dragover 이벤트가 일어나면 todo-cards에 드래그로 끌고 온 div를 자식 요소로 추가한다.
+todoCardsSection.addEventListener("dragover", (e) => e.preventDefault());
+todoCardsSection.addEventListener("drop", (e) => {
+  // console.log(e.target);
+  // console.log(e.target.className);
+  e.preventDefault();
+  const dragging = document.querySelector(".dragging");
+  todoCards.appendChild(dragging);
 });
 
 // form 태그 안에 들어있는 input에 내용을 입력 후 엔터를 눌러도 form의 원래 액션이 일어나지 않도록 하기 위해서.
