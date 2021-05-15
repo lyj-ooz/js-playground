@@ -4,7 +4,26 @@ const todoCards = document.querySelector(".todo-cards");
 const finishedCards = document.querySelector(".finished-cards");
 const todoCardsSection = document.querySelector(".todo");
 const finishedCardsSection = document.querySelector(".finished");
-const cardsSections = document.querySelector(".todo, .finished");
+
+const cards = document.querySelectorAll("div[class$='-cards']");
+cards.forEach((card) => {
+  card.addEventListener("click", (e) => {
+    if (e.target.className === "delete") {
+      const currTargetClassName = e.currentTarget.className;
+      const id = e.target.parentElement.dataset.id;
+      let from = "";
+
+      if (currTargetClassName === "todo-cards") {
+        from = "todo";
+      } else if (currTargetClassName === "finished-cards") {
+        from = "finished";
+      }
+      removeFromLocal(id, from);
+      e.target.parentElement.remove();
+    }
+  });
+});
+
 let todos;
 let finished;
 
@@ -92,6 +111,11 @@ function addTodoToCards(txt, id) {
   todoDiv.setAttribute("draggable", true);
   todoDiv.dataset.id = id;
   todoDiv.innerText = txt;
+  // 1-1. make button for delete
+  const delButton = document.createElement("button");
+  delButton.className = "delete";
+  delButton.innerText = "X";
+  todoDiv.appendChild(delButton);
   //2. add it to todo-cards
   todoCards.appendChild(todoDiv);
   //3. make it twinkle for 0.3s
@@ -125,12 +149,12 @@ function saveToLocal(val, tag) {
   }
 }
 
-function removeFromLocal(val, from) {
+function removeFromLocal(id, from) {
   if (from === "todo") {
     // todo에서 지운다
     const todos = JSON.parse(localStorage.getItem("todo"));
     const idx = todos.findIndex((todo) => {
-      return todo.id === val;
+      return todo.id === id;
     });
     todos.splice(idx, 1);
     localStorage.setItem("todo", JSON.stringify(todos));
@@ -138,7 +162,7 @@ function removeFromLocal(val, from) {
     // finished에서 지운다
     const finished = JSON.parse(localStorage.getItem("finished"));
     const idx = finished.findIndex((f) => {
-      return f.id === val;
+      return f.id === id;
     });
     finished.splice(idx, 1);
     localStorage.setItem("finished", JSON.stringify(finished));
