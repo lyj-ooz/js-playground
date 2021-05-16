@@ -4,8 +4,15 @@ const todoCards = document.querySelector(".todo-cards");
 const finishedCards = document.querySelector(".finished-cards");
 const todoCardsSection = document.querySelector(".todo");
 const finishedCardsSection = document.querySelector(".finished");
-
 const cards = document.querySelectorAll("div[class$='-cards']");
+let todos;
+let finished;
+
+init();
+
+// 삭제 버튼 누르면 해당 todo, finished 아이템을 삭제.
+// 처음 화면에는 삭제 버튼이 없으므로 직접 삭제 버튼에 이벤트리스너를 붙이지 못했다
+// 대신 -cards 클래스에 이벤트 리스너를 붙여서 이벤트 위임 방식으로 작성했다.
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
     if (e.target.className === "delete") {
@@ -23,9 +30,6 @@ cards.forEach((card) => {
     }
   });
 });
-
-let todos;
-let finished;
 
 //todo-cards, finished-cards div에 마우스가 눌리면 div들을 싹 새로 불러온다음 drag 이벤트를 준다.
 container.addEventListener("mousedown", () => {
@@ -50,10 +54,10 @@ finishedCardsSection.addEventListener("drop", (e) => {
 
   const dragging = document.querySelector(".dragging");
   finishedCards.appendChild(dragging);
-
+  const draggingText = dragging.innerText;
   const data = {
     id: dragging.dataset.id,
-    val: dragging.innerText,
+    val: draggingText.substring(0, draggingText.length - 2),
   };
   saveToLocal(data, "finished");
   removeFromLocal(dragging.dataset.id, "todo");
@@ -66,10 +70,10 @@ todoCardsSection.addEventListener("drop", (e) => {
 
   const dragging = document.querySelector(".dragging");
   todoCards.appendChild(dragging);
-
+  const draggingText = dragging.innerText;
   const data = {
     id: dragging.dataset.id,
-    val: dragging.innerText,
+    val: draggingText.substring(0, draggingText.length - 2),
   };
   saveToLocal(data, "todo");
   removeFromLocal(dragging.dataset.id, "finished");
@@ -105,7 +109,23 @@ todoInput.addEventListener("focusout", () => {
   todoInput.value = "";
 });
 
-function addTodoToCards(txt, id) {
+function init() {
+  if (localStorage.getItem("todo")) {
+    const todoFromLocal = JSON.parse(localStorage.getItem("todo"));
+    todoFromLocal.forEach((todo) => {
+      addTodoToCards(todo.val, todo.id);
+    });
+  }
+
+  if (localStorage.getItem("finished")) {
+    const finishedFromLocal = JSON.parse(localStorage.getItem("finished"));
+    finishedFromLocal.forEach((finished) => {
+      addTodoToCards(finished.val, finished.id, "finished");
+    });
+  }
+}
+
+function addTodoToCards(txt, id, to = "") {
   //1. make todo div
   const todoDiv = document.createElement("div");
   todoDiv.setAttribute("draggable", true);
@@ -117,7 +137,12 @@ function addTodoToCards(txt, id) {
   delButton.innerText = "X";
   todoDiv.appendChild(delButton);
   //2. add it to todo-cards
-  todoCards.appendChild(todoDiv);
+  // if it is for 'finished', add to fnished-cards
+  if (to === "finished") {
+    finishedCards.appendChild(todoDiv);
+  } else {
+    todoCards.appendChild(todoDiv);
+  }
   //3. make it twinkle for 0.3s
   twinkle(todoDiv);
 }
