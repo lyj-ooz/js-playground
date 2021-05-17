@@ -13,6 +13,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* customize colors */
+  --border-color: #a2a2a2;
+  --border-bottom-color: #000;
+  --twinkle-color: #6a5acd;
+  --dragging-bg-color: #fa8072;
+  --delete-color: #dc143c;
+  transition: 0.3s;
+}
+
+body.dark {
+  background-color: #2b2b2b;
+  color: #eee;
+  --border-bottom-color: #eee;
+  --twinkle-color: #e0de5e;
 }
 
 .container {
@@ -26,7 +40,7 @@ body {
 .input {
   width: 30%;
   height: 300px;
-  border: 1px solid #333;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   padding-top: 100px;
   padding-left: 10px;
@@ -53,9 +67,10 @@ body {
 }
 
 .input input {
+  color: inherit;
   border: 0;
   background: transparent;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--border-bottom-color);
   display: block;
   width: 100%;
   padding: 10px 0;
@@ -65,11 +80,10 @@ body {
 
 .input input:focus {
   outline: 0;
-  border-bottom-color: #333;
 }
 
 .input input:focus + label {
-  color: #a2a2a2;
+  color: var(--border-color);
   transform: scale(0.9) translateX(-10px) translateY(-30px);
 }
 
@@ -79,13 +93,6 @@ body {
   padding-left: 15px;
   position: relative;
 }
-
-/* .todo::after {
-  content: "";
-  height: 100px;
-  width: 5px;
-  background-color: #000;
-} */
 
 .todo h2,
 .finished h2 {
@@ -105,7 +112,7 @@ body {
   padding-right: 30px;
   padding-bottom: 10px;
   padding-left: 10px;
-  border: 1px solid #a2a2a2;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   position: relative;
   transition: 0.3s ease;
@@ -122,18 +129,19 @@ body {
   margin-left: 1rem;
   background-color: transparent;
   border: none;
-  color: #dc143c;
+  color: var(--delete-color);
   font-weight: bold;
   cursor: pointer;
 }
 
-.twinkle {
-  border: 1px solid slateblue;
-  color: slateblue;
+.todo .todo-cards div.twinkle,
+.finished .finished-cards div.twinkle {
+  border-color: var(--twinkle-color);
+  color: var(--twinkle-color);
 }
 
 .dragging {
-  background-color: salmon;
+  background-color: var(--dragging-bg-color);
 }
 
 .alert {
