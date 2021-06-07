@@ -4,10 +4,6 @@
   --font-color: #e9e9e9;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
 div,
 section,
 header,
@@ -29,4 +25,32 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url(./assets/Background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  /* top: 0; */
+  bottom: 0;
+  left: 0;
+  /* right: 0; */
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/Mountain.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  z-index: -1;
 }
